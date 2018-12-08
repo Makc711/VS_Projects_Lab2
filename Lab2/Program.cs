@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab2
 {
@@ -14,21 +10,47 @@ namespace Lab2
         VP = 9
     }
 
-    struct Employee
+    class Employee
     {
-        public EmpType title;
-        public string name;
-        public short deptID;
+        private string _fullName;
+        private int _empId;
+        private float _currPay;
+
+        public Employee() { }
+
+        public Employee(string fullName, int empID, float currPay)
+        {
+            _fullName = fullName;
+            _empId = empID;
+            _currPay = currPay;
+        }
+
+        public void GiveBonus(float amount)
+        {
+            _currPay += amount;
+        }
+
+        public virtual void DisplayStats()
+        {
+            Console.WriteLine("Name: {0}", _fullName);
+            Console.WriteLine("Pay: {0}", _currPay);
+            Console.WriteLine("ID: {0}", _empId);
+        }
+
     }
 
-    class StructTester
+
+    class Program
     {
         static void Main(string[] args)
         {
-            Employee fred;
-            fred.deptID = 40;
-            fred.name = "Fred";
-            fred.title = EmpType.Grunt;
+            Employee e = new Employee("Joe", 80, 30000);
+            e.GiveBonus(200);
+            var e2 = new Employee("Beth", 81, 50000);
+            e2.GiveBonus(1000);
+            e2.DisplayStats();
+
+            Console.ReadKey();
         }
     }
 }
