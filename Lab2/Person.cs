@@ -2,40 +2,39 @@
 {
     class Person
     {
-        string fam = "", status = "", health = "";
-        int age = 0, salary = 0;
+        string _fam = "";
+        string _status = "";
+        string _health = "";
+        int _age, _salary;
 
         public string Fam 
         {	    //стратегия: Read,Write-once 
-            set { if (fam == "") fam = value; }
-            get { return fam; }
+            set { if (_fam == "") _fam = value; }
+            get => _fam;
         }
 
-        public string Status 
-        {		//стратегия: Read-only
-            get { return status; }
-        }
+        public string Status => _status;
 
         public int Age 
         {       //стратегия: Read,Write 
             set
             {
-                age = value;
-                if (age < 7)
-                    status = "ребенок";
-                else if (age < 17)
-                    status = "школьник";
-                else if (age < 22)
-                    status = "студент";
+                _age = value;
+                if (_age < 7)
+                    _status = "ребенок";
+                else if (_age < 17)
+                    _status = "школьник";
+                else if (_age < 22)
+                    _status = "студент";
                 else
-                    status = "служащий";
+                    _status = "служащий";
             }
-            get { return age; }
+            get => _age;
         }
 
         public int Salary 
         {        //стратегия: Write-only 
-            set { salary = value; }
+            set => _salary = value;
         }
     }
 }
