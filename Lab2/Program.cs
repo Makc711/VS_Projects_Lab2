@@ -2,55 +2,32 @@
 
 namespace Lab2
 {
-    enum EmpType : byte
-    {
-        Manager = 10,
-        Grunt = 1,
-        Contractor = 100,
-        VP = 9
-    }
-
-    class Employee
-    {
-        private string _fullName;
-        private int _empId;
-        private float _currPay;
-
-        public Employee() { }
-
-        public Employee(string fullName, int empID, float currPay)
-        {
-            _fullName = fullName;
-            _empId = empID;
-            _currPay = currPay;
-        }
-
-        public void GiveBonus(float amount)
-        {
-            _currPay += amount;
-        }
-
-        public virtual void DisplayStats()
-        {
-            Console.WriteLine("Name: {0}", _fullName);
-            Console.WriteLine("Pay: {0}", _currPay);
-            Console.WriteLine("ID: {0}", _empId);
-        }
-
-    }
-
-
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Employee e = new Employee("Joe", 80, 30000);
             e.GiveBonus(200);
             var e2 = new Employee("Beth", 81, 50000);
             e2.GiveBonus(1000);
             e2.DisplayStats();
+            Console.WriteLine();
+
+            TestPersonProps();
 
             Console.ReadKey();
+        }
+
+        public static void TestPersonProps()
+        {
+            Person pers1 = new Person();
+            pers1.Fam = "Петров";
+            pers1.Age = 21;
+            pers1.Salary = 1000;
+            Console.WriteLine("Фам={0}, возраст={1}, статус={2}", pers1.Fam, pers1.Age, pers1.Status);
+            pers1.Fam = "Иванов";
+            pers1.Age += 1;
+            Console.WriteLine("Фам={0}, возраст={1}, статус={2}", pers1.Fam, pers1.Age, pers1.Status);
         }
     }
 }
