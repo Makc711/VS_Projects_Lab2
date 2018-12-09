@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab2
 {
     public class ClainP : IProps
     {
-        public ClainP() { }
-
         void IProps.Prop1(string s)
         {
             Console.WriteLine(s);
@@ -18,6 +12,11 @@ namespace Lab2
         void IProps.Prop2(string name, int val)
         {
             Console.WriteLine("name = {0}, val ={1}", name, val);
+        }
+
+        void IProps.Prop3()
+        {
+            Console.WriteLine("Метод 3 интерфейса IProps");
         }
 
         // Пример обертывания закрытых методов:
@@ -38,7 +37,7 @@ namespace Lab2
             clain.MyProp1("Свойство 1 объекта");
             clain.MyProp2("Владимир", 44);
             Console.WriteLine("Объект класса IProps вызывает открытые методы!");
-            IProps ip = (IProps)clain;
+            IProps ip = clain;
             ip.Prop1("интерфейс: свойство");
             ip.Prop2("интерфейс: свойство", 77);
             Console.WriteLine();

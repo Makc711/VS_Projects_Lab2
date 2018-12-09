@@ -43,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClainP.cs" />
+    <Compile Include="ClainTwo.cs" />
     <Compile Include="Derived.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Found.cs" />
     <Compile Include="IProps.cs" />
+    <Compile Include="IPropsOne.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

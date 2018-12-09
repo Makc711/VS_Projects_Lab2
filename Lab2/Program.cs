@@ -20,6 +20,7 @@ namespace Lab2
             Derived.TestDerivedProps();
 
             ClainP.TestClainIProps();
+            ClainTwo.TestTwoInterfaces();
 
             Console.ReadKey();
         }
