@@ -14,8 +14,10 @@ namespace Lab2
             Console.WriteLine();
 
             Person.TestPersonProps();
-            Console.WriteLine();
             Person.TestPersonChildren();
+
+            Found.TestFoundProps();
+            Derived.TestDerivedProps();
 
             Console.ReadKey();
         }
