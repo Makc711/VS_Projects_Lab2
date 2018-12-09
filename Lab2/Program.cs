@@ -13,21 +13,11 @@ namespace Lab2
             e2.DisplayStats();
             Console.WriteLine();
 
-            TestPersonProps();
+            Person.TestPersonProps();
+            Console.WriteLine();
+            Person.TestPersonChildren();
 
             Console.ReadKey();
-        }
-
-        public static void TestPersonProps()
-        {
-            Person pers1 = new Person();
-            pers1.Fam = "Петров";
-            pers1.Age = 21;
-            pers1.Salary = 1000;
-            Console.WriteLine("Фам={0}, возраст={1}, статус={2}", pers1.Fam, pers1.Age, pers1.Status);
-            pers1.Fam = "Иванов";
-            pers1.Age += 1;
-            Console.WriteLine("Фам={0}, возраст={1}, статус={2}", pers1.Fam, pers1.Age, pers1.Status);
         }
     }
 }
